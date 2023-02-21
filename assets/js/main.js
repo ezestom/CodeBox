@@ -55,3 +55,22 @@ const toogleItem = (item) => {
 };
 
 /*=============== DELETE DROPDOWN STYLES ===============*/
+const mediaQuery = matchMedia('(min-width: 1118px)'),
+dropdownContainer = document.querySelectorAll('.dropdown__container')
+
+// Function to remove dropdown styles in mobile mode when browser resizes
+
+const removeStyle = () =>{
+	// Validate if the media query reaches 1118px
+	if(mediaQuery.matches){
+		//remove the dropdown container height style
+		dropdownContainer.forEach((e)=>{
+			e.removeAttribute('style')
+		})
+		// Remove the show-dropdown class from dropdown item
+		dropdownItems.forEach((e)=>{
+			e.classList.remove('show-dropdown')
+		})
+	}
+}
+addEventListener('resize', removeStyle)
