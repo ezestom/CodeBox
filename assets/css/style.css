@@ -144,6 +144,12 @@ a {
     transition: top .4s, opacity .3s;
   }
 }
+.nav__menu::-webkit-scrollbar{
+  width: .5rem;
+}
+.nav__menu::-webkit-scrollbar-thumb{
+  background-color: hsl(220, 12%, 70%);
+}
 
 .nav__link {
   color: var(--title-color);
@@ -155,24 +161,24 @@ a {
   transition: background-color .3s;
 }
 
-.nav__link:hover{
+.nav__link:hover {
   background-color: var(--first-color-lighten);
 }
 
 /* Show menu */
-.show-menu{
+.show-menu {
   opacity: 1;
   top: 3.5rem;
   pointer-events: initial;
 }
 
 /* Show icon */
-.show-icon .nav__toggle-menu{
+.show-icon .nav__toggle-menu {
   opacity: 0;
   transform: rotate(90deg);
 }
 
-.show-icon  .nav__toggle-close{
+.show-icon .nav__toggle-close {
   opacity: 1;
   transform: rotate(90deg);
 }
@@ -180,10 +186,11 @@ a {
 
 /*=============== DROPDOWN ===============*/
 
-.dropdown__button{
+.dropdown__button {
   cursor: pointer;
 }
-.dropdown__arrow{
+
+.dropdown__arrow {
   font-size: 1.5rem;
   font-weight: initial;
   transition: transform .4s;
@@ -191,51 +198,64 @@ a {
 
 .dropdown__content,
 .dropdown__group,
-.dropdown__list{
+.dropdown__list {
   display: grid;
 }
-.dropdown__container{
+
+.dropdown__container {
   background-color: var(--first-color-lighten);
   height: 0;
   overflow: hidden;
   transition: height .4s;
 }
-.dropdown__content{
+
+.dropdown__content {
   row-gap: 1.75rem;
 }
-.dropdown__group{
+
+.dropdown__group {
   padding-left: 2.5rem;
   row-gap: .5rem;
 }
-.dropdown__group:first-child{
+
+.dropdown__group:first-child {
   margin-top: 1.25rem;
 }
-.dropdown__group:last-child{
+
+.dropdown__group:last-child {
   margin-bottom: 1.25rem;
 }
-.dropdown__icon{
+
+.dropdown__icon {
   font-size: 1.25rem;
-  color: var(--first-color);  
+  color: var(--first-color);
 }
-.dropdown__title{
+
+.dropdown__title {
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
-} 
-.dropdown__list{
+}
+
+.dropdown__list {
   row-gap: .25rem;
 }
-.dropdown__link{
+
+.dropdown__link {
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
   color: var(--text-color);
   transition: color .3s;
 }
 
-.dropdown__link:hover{
+.dropdown__link:hover {
   color: var(--title-color);
 }
+
 /* Rotate dropdown icon */
+.show-dropdown .dropdown__arrow {
+  transform: rotate(180deg);
+}
 
 
 /*=============== BREAKPOINTS ===============*/
